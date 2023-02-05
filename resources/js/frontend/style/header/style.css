@@ -1,0 +1,4 @@
+.bg-main{
+    background: var(--main-bg-color);
+    color:#ffffff!important;
+}
