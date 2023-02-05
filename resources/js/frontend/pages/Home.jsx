@@ -4,7 +4,7 @@ import Section from "../layouts/Section";
 export default function(){
     return (
         <>
-        <Header/>
+        <h1>HOME</h1>
         {/* <Section/> */}
         {/* <Footer/> */}
         </>

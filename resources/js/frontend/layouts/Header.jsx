@@ -1,32 +1,28 @@
+import { Item, Nav, NavLink } from '../components/header'
+import { Link } from 'react-router-dom'
 import '../style/header/style.css'
 export default function Header() {
     return (
         <header className="bg-main">
-            <div className="w-25 m-auto">
-            <nav className="navbar navbar-expand-lg">
-                <div className="container-fluid">
-                    <a className="navbar-brand" href="#">Navbar</a>
-                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span className="navbar-toggler-icon"></span>
-                    </button>
-                    <div className="collapse navbar-collapse" id="navbarNav">
-                        <ul className="navbar-nav">
-                            <li className="nav-item">
-                                <a className="nav-link active" aria-current="page" href="#">Home</a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link" href="#">Features</a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link" href="#">Pricing</a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link disabled">Disabled</a>
-                            </li>
-                        </ul>
+            <div className="col col-md-6 m-auto">
+                <nav className="navbar navbar-expand-md">
+                    <div className="container-fluid">
+                        <Link className="navbar-brand" to="/">Navbar</Link>
+                        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span className="navbar-toggler-icon"></span>
+                        </button>
+                        <div className="collapse navbar-collapse" id="navbarNav">
+                            <Nav className="navbar-nav">
+                                <Item className="nav-item">
+                                    <NavLink to={''} className={'nav-link'}>Home</NavLink>
+                                </Item>
+                                <Item className="nav-item">
+                                    <NavLink to={'contact'} className="nav-link">Contact</NavLink>
+                                </Item>
+                            </Nav>
+                        </div>
                     </div>
-                </div>
-            </nav>
+                </nav>
             </div>
 
         </header>
