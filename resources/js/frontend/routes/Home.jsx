@@ -13,14 +13,16 @@ const hotels=[
     Conveniently located near a variety of attractions in Dallas, Texas, this all-suite hotel offers convenient local area transport as well as delicious on-site dining choices available throughout the... The ease of checking in and out of the hotel.
     `,
     title:'Embassy Suites Dallas - Park Central Area ',
-    rate:0.5
+    rate:0.5,
+    price:100
   },
   {
     imgUrl:'https://picsum.photos/id/212/1024/1024',
     body:`
     Conveniently located near a variety of attractions in Dallas, Texas, this all-suite hotel offers convenient local area transport as well as delicious on-site dining choices available throughout the... The ease of checking in and out of the hotel.`,
     title:'Embassy Suites Dallas - Park Central Area ',
-    rate:4.5
+    rate:4.5,
+    price:250
   },
   {
     imgUrl:'https://picsum.photos/id/252/1024/1024',
@@ -30,7 +32,9 @@ const hotels=[
 
     `,
     title:'Embassy Suites Dallas - Park Central Area ',
-    rate:2.5
+    rate:2.5,
+    price:300
+
   },
   {
     imgUrl:'https://picsum.photos/id/232/1024/1024',
@@ -40,7 +44,9 @@ const hotels=[
 
     `,
     title:'Embassy Suites Dallas - Park Central Area ',
-    rate:1
+    rate:1,
+    price:300
+
   },
   {
     imgUrl:'https://picsum.photos/id/132/1024/1024',
@@ -50,7 +56,9 @@ const hotels=[
 
     `,
     title:'Embassy Suites Dallas - Park Central Area ',
-    rate:3
+    rate:3,
+    price:400
+
   },
 
 ]
