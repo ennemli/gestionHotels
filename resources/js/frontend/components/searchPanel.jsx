@@ -18,7 +18,7 @@ export default function SearchPanel() {
                 <div className="col d-flex align-items-stretch position-relative">
                     <div class="form-floating">
                         <input type="text" class="form-control" id="floatingInputGroup1" placeholder="Search" />
-                        <label for="floatingInputGroup1">Search</label>
+                        <label for="floatingInputGroup1">Where are you heading?</label>
                     </div>
                     <button class=" me-1 btn d-block rounded-end rounded-0" style={{ background: "var(--main-color)" }}>Search</button>
 

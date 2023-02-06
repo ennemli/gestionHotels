@@ -16,19 +16,19 @@ export default function Carousel() {
     <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
   </div>
   <div className="carousel-inner">
-    <CarouselItem imgUrl="https://picsum.photos/id/232/1024/1024" className="carousel-item active" data-bs-interval="10000">
+    <CarouselItem imgUrl="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8aG90ZWxzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" className="carousel-item active" data-bs-interval="10000">
       <div className="carousel-caption position-static d-none d-md-block">
         <h5>First slide label</h5>
         <p>Some representative placeholder content for the first slide.</p>
       </div>
     </CarouselItem>
-    <CarouselItem imgUrl="https://picsum.photos/id/237/1024/1024" className="carousel-item" data-bs-interval="2000">
+    <CarouselItem imgUrl="https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8aG90ZWxzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" className="carousel-item" data-bs-interval="2000">
       <div className="carousel-caption position-static d-none d-md-block">
         <h5>Second slide label</h5>
         <p>Some representative placeholder content for the second slide.</p>
       </div>
     </CarouselItem>
-    <CarouselItem imgUrl="https://picsum.photos/id/239/1024/1024" className="carousel-item">
+    <CarouselItem imgUrl="https://images.unsplash.com/photo-1564501049412-61c2a3083791?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fGhvdGVsc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" className="carousel-item">
       <div className="carousel-caption position-static d-none d-md-block">
         <h5>Third slide label</h5>
         <p>Some representative placeholder content for the third slide.</p>
