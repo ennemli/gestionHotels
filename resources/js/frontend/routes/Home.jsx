@@ -11,19 +11,16 @@ const hotels=[
     imgUrl:'https://picsum.photos/id/292/1024/1024',
     body:`
     Conveniently located near a variety of attractions in Dallas, Texas, this all-suite hotel offers convenient local area transport as well as delicious on-site dining choices available throughout the... The ease of checking in and out of the hotel.
-
-
     `,
-    title:'Embassy Suites Dallas - Park Central Area '
+    title:'Embassy Suites Dallas - Park Central Area ',
+    rate:0.5
   },
   {
     imgUrl:'https://picsum.photos/id/212/1024/1024',
     body:`
-    Conveniently located near a variety of attractions in Dallas, Texas, this all-suite hotel offers convenient local area transport as well as delicious on-site dining choices available throughout the... The ease of checking in and out of the hotel.
-
-
-    `,
-    title:'Embassy Suites Dallas - Park Central Area '
+    Conveniently located near a variety of attractions in Dallas, Texas, this all-suite hotel offers convenient local area transport as well as delicious on-site dining choices available throughout the... The ease of checking in and out of the hotel.`,
+    title:'Embassy Suites Dallas - Park Central Area ',
+    rate:4.5
   },
   {
     imgUrl:'https://picsum.photos/id/252/1024/1024',
@@ -32,7 +29,8 @@ const hotels=[
 
 
     `,
-    title:'Embassy Suites Dallas - Park Central Area '
+    title:'Embassy Suites Dallas - Park Central Area ',
+    rate:2.5
   },
   {
     imgUrl:'https://picsum.photos/id/232/1024/1024',
@@ -41,7 +39,18 @@ const hotels=[
 
 
     `,
-    title:'Embassy Suites Dallas - Park Central Area '
+    title:'Embassy Suites Dallas - Park Central Area ',
+    rate:1
+  },
+  {
+    imgUrl:'https://picsum.photos/id/132/1024/1024',
+    body:`
+    Conveniently located near a variety of attractions in Dallas, Texas, this all-suite hotel offers convenient local area transport as well as delicious on-site dining choices available throughout the... The ease of checking in and out of the hotel.
+
+
+    `,
+    title:'Embassy Suites Dallas - Park Central Area ',
+    rate:3
   },
 
 ]
@@ -54,7 +63,7 @@ export default function Home() {
     <Carousel/>
     <Section>
       <Cards>
-      {hotels.map((hotel)=><Card {...hotel}/>)}
+      {hotels.map((hotel,i)=><Card key={i} {...hotel}/>)}
       </Cards>
     </Section>
     </>
