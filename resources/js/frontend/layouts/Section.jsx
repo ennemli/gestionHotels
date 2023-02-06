@@ -1,7 +1,7 @@
-export default function Section({sectionContent}){
+export default function Section({children}){
     return (
-        <section>
-            
+        <section className="container mt-5">
+            {children}
         </section>
     )
 } 
