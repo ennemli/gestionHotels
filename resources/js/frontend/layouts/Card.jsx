@@ -3,17 +3,17 @@ import { getRates } from '../utils/cards'
 
 export default function Card({imgUrl,title,body,price,rate}) {
     const rateArr=getRates(rate)
-    console.log(rateArr)
   return (
-<div class="card mb-3">
-  <img src={imgUrl} class="card-img-top" alt="..."/>
-  <div class="card-body">
-    <h5 class="card-title">{title}</h5>
-    <p class="card-text">{body}</p>
-    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-    <div className='d-flex justify-content-between align-items-center'>
+<div className="card mb-3">
+  <img src={imgUrl} className="card-img-top" alt="..."/>
+  <div className="card-body">
+    <h5 className="card-title">{title}</h5>
+    <p className="card-text">{body}</p>    
+  </div>
+  <div className='card-footer'>
+  <div className='d-flex justify-content-between align-items-center'>
     <div>
-        {rateArr.map((cls,i)=><i class={`bi ${cls}`} style={{color:"var(--secondary-color)"}} key={i}></i>)}
+        {rateArr.map((cls,i)=><i className={`bi ${cls}`} style={{color:"var(--secondary-color)"}} key={i}></i>)}
 
     </div>
     <mark className='fw-bold' style={{color:"var(--main-color)"}}>{price} MAD/Night</mark>

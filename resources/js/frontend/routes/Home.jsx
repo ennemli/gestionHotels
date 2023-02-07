@@ -6,6 +6,7 @@ import SearchPanel from '../components/searchPanel'
 import Section from '../layouts/Section'
 import Card from '../layouts/Card'
 import Cards from '../components/home/cards'
+import HotelCanvas from '../layouts/HotelCanvas'
 const hotels=[
   {
     imgUrl:'https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=449&q=80',
@@ -68,7 +69,7 @@ export default function Home() {
   return (
     <>
     <Header Navbar={Navbar}/>
-    <Carousel/>
+    <HotelCanvas/>
     <Section>
       <Cards>
       {hotels.map((hotel,i)=><Card key={i} {...hotel}/>)}

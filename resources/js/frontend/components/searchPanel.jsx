@@ -16,21 +16,21 @@ export default function SearchPanel() {
         <SearchPanel_ className='row'>
             <div className='col-12 row row-cols-md-3'>
                 <div className="col d-flex align-items-stretch position-relative">
-                    <div class="form-floating">
-                        <input type="text" class="form-control" id="floatingInputGroup1" placeholder="Search" />
+                    <div className="form-floating">
+                        <input type="text" className="form-control" id="floatingInputGroup1" placeholder="Search" />
                         <label for="floatingInputGroup1">Where are you heading?</label>
                     </div>
-                    <button class=" me-1 btn d-block rounded-end rounded-0" style={{ background: "var(--main-color)" }}>Search</button>
+                    <button className=" me-1 btn d-block rounded-end rounded-0" style={{ background: "var(--main-color)" }}>Search</button>
 
                 </div>
 
 
-                <div class="col form-floating">
-                    <input type="date" class="form-control" id="floatingInput" placeholder="Date d'arrivée" />
+                <div className="col form-floating">
+                    <input type="date" className="form-control" id="floatingInput" placeholder="Date d'arrivée" />
                     <label for="floatingInput">Date d'arrivée</label>
                 </div>
-                <div class="col form-floating ">
-                    <input type="date" class="form-control" id="floatingInput" placeholder="Date de départ" />
+                <div className="col form-floating ">
+                    <input type="date" className="form-control" id="floatingInput" placeholder="Date de départ" />
                     <label for="floatingInput">Date de départ</label>
                 </div>
             </div>

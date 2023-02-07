@@ -1,4 +1,5 @@
 export function getRates(rateNum) {
+    rateNum=Math.max(Math.min(rateNum,5),0)
     const fillStars=rateNum-rateNum%1
     const halfStar=rateNum%1===0?0:1
     const notFillStars=5-rateNum
