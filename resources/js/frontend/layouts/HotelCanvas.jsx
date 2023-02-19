@@ -1,10 +1,13 @@
-import { OrbitControls } from "@react-three/drei";
+import { Environment, OrbitControls, useTexture } from "@react-three/drei";
 import '../style/canvas.css'
 import * as THREE from 'three'
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import Hotel from "../components/Hotel";
 import { folder, useControls } from "leva";
 function Scene() {
+  const envTexture=useTexture('./textures/pool_hotel.jpeg')
+  envTexture.mapping=THREE.EquirectangularReflectionMapping
+  envTexture.encoding=THREE.sRGBEncoding
   const { camera } = useThree()
   const { fogColor, fogIntensity, lightIntensity, lightColor, fov, cameraPosition } = useControls({
     Fog: folder({
@@ -50,7 +53,8 @@ function Scene() {
       <OrbitControls />
       <directionalLight args={[new THREE.Color(lightColor), lightIntensity]} />
       <fogExp2 args={[new THREE.Color(fogColor), fogIntensity]} />
-      <Hotel/>
+      {/* <Hotel/> */}
+      <Environment background map={envTexture}/>
     </>
   )
 }
