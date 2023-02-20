@@ -12,9 +12,9 @@ function useEnvTexture(src){
 function EnvSphere() {
   const envRef = useRef(!null)
   const envTexture1 = useEnvTexture('./textures/hotel1.jpeg')
-  const envTexture2 = useEnvTexture('./textures/hotel2.jpeg')
-  const envTexture3 = useEnvTexture('./textures/hotel3.jpeg')
-  const envTexture4 = useEnvTexture('./textures/hotel4.jpeg')
+  // const envTexture2 = useEnvTexture('./textures/hotel2.jpeg')
+  // const envTexture3 = useEnvTexture('./textures/hotel3.jpeg')
+  // const envTexture4 = useEnvTexture('./textures/hotel4.jpeg')
 
   useFrame(({ clock }) => {
     envRef.current.rotation.y += 0.001
