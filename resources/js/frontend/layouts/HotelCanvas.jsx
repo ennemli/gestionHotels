@@ -1,67 +1,45 @@
 import { Environment, OrbitControls, useTexture } from "@react-three/drei";
 import '../style/canvas.css'
 import * as THREE from 'three'
-import { Canvas, useFrame, useThree } from "@react-three/fiber";
-import Hotel from "../components/Hotel";
-import { folder, useControls } from "leva";
-function Scene() {
-  const envTexture=useTexture('./textures/pool_hotel.jpeg')
-  envTexture.mapping=THREE.EquirectangularReflectionMapping
-  envTexture.encoding=THREE.sRGBEncoding
-  const { camera } = useThree()
-  const { fogColor, fogIntensity, lightIntensity, lightColor, fov, cameraPosition } = useControls({
-    Fog: folder({
-      fogColor: "#ffffff",
-      fogIntensity: {
-        min: 0,
-        max: 2,
-        step: 0.001,
-        value: 0.1
-      }
-    }),
-    Light: folder({
-      lightColor: "#333333",
-      lightIntensity: {
-        min: 0,
-        max: 50,
-        step: 0.001,
-        value: 10
-      }
-    }),
-    cameraSetting: folder({
-      fov: {
-        min: 0,
-        max: 90,
-        step: 1,
-        value: 45,
-        onChange:(v)=>{
-          camera.fov=v
-          camera.updateProjectionMatrix()
-        }
-      },
-      cameraPosition: {
-        value: { x: 0, y: 3, z: 8 },
-        onChange: (v) => {
-          camera.position.set(v.x,v.y,v.z)
-        }
-      }
-    })
+import { Canvas, useFrame } from "@react-three/fiber";
+import { useEffect, useRef } from "react";
+function EnvSphere() {
+  const envRef = useRef(!null)
+  const envTexture = useTexture('./textures/hotel4.jpeg')
+  envTexture.mapping = THREE.EquirectangularReflectionMapping
+  envTexture.encoding = THREE.sRGBEncoding
+  useFrame(({ clock }) => {
+    envRef.current.rotation.y += 0.001
+
   })
 
+  return <mesh ref={envRef}>
+    <sphereGeometry args={[20, 100, 100]} />
+    <meshBasicMaterial side={THREE.DoubleSide} color={0xffffff} map={envTexture} />
+  </mesh>
+}
+function Scene() {
+
+
+  const orbitRef = useRef(!null)
+ 
+  useEffect(() => {
+  })
+  
   return (
     <>
-      <OrbitControls />
-      <directionalLight args={[new THREE.Color(lightColor), lightIntensity]} />
-      <fogExp2 args={[new THREE.Color(fogColor), fogIntensity]} />
-      {/* <Hotel/> */}
-      <Environment background map={envTexture}/>
+      <OrbitControls ref={orbitRef} enableDamping={true} dampingFactor={0.2} />
+      <Environment preset="city" />
+      <EnvSphere/>
+
+      {/* }} */}
     </>
   )
 }
 export default function HotelCanvas() {
 
   return (
-    <Canvas camera={{ fov: 45, near: 0.1, far: 1000, position: [0, 2, 8] }}>
+    <Canvas camera={{ fov: 45, near: 0.1, far: 1000, position: [0, 2, 0] }}>
       <Scene />
     </Canvas>
   )
