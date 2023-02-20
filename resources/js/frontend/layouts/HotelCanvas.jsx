@@ -1,7 +1,7 @@
 import { Environment, OrbitControls, useTexture } from "@react-three/drei";
 import '../style/canvas.css'
 import * as THREE from 'three'
-import { Canvas, useFrame } from "@react-three/fiber";
+import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { useEffect, useRef } from "react";
 function useEnvTexture(src){
   const texture=useTexture(src)
@@ -16,7 +16,7 @@ function EnvSphere() {
   // const envTexture3 = useEnvTexture('./textures/hotel3.jpeg')
   // const envTexture4 = useEnvTexture('./textures/hotel4.jpeg')
 
-  useFrame(({ clock }) => {
+  useFrame(() => {
     envRef.current.rotation.y += 0.001
 
   })
@@ -27,16 +27,16 @@ function EnvSphere() {
   </mesh>
 }
 function Scene() {
-
-
+  const {camera}=useThree()
   const orbitRef = useRef(!null)
  
   useEffect(() => {
+    console.log(camera)
   })
   
   return (
     <>
-      <OrbitControls  ref={orbitRef} enableDamping={true} dampingFactor={0.2} />
+      <OrbitControls target={new THREE.Vector3(0,1,2.5)}  ref={orbitRef} enableDamping={true} dampingFactor={0.2} />
       <Environment preset="city" />
       <EnvSphere/>
 
