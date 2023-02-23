@@ -1,7 +1,7 @@
 import { Clone, Merged, useGLTF, useTexture } from '@react-three/drei'
 import { folder, useControls } from 'leva'
 import React, { useEffect, useRef } from 'react'
-
+import * as THREE from 'three' 
 export default function Hotel() {
   const obj = useRef()
   const hotel = useGLTF('./hotel.glb')
@@ -26,20 +26,17 @@ export default function Hotel() {
     },
   })
 })
-  // const texture = useTexture('./textures/hotel.png')
-  // useEffect(() => {
+  const texture = useTexture('./textures/hotel.png')
+  useEffect(() => {
 
-  //   obj.current.children.forEach((grp) => {
-  //     grp.children.forEach((mesh) => {
-  //       if (mesh.isMesh) {
-  //         if (mesh.material.map) {
-  //           mesh.material.map = texture
-  //           mesh.material.map.needsUpdate = true
-  //         }
-  //       }
-  //     })
-  //   })
-  // })
+    obj.current.children.forEach((grp) => {
+      grp.children.forEach((mesh) => {
+        if (mesh.isMesh) {
+          mesh.material=new THREE.MeshStandardMaterial({map:mesh.material.map})
+        }
+      })
+    })
+  })
   return (
     <Clone object={hotel.scene} ref={obj} position={[hotelPosition.x,hotelPosition.y,hotelPosition.z]}/>
   )
