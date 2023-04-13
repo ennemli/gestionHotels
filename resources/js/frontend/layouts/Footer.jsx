@@ -2,7 +2,7 @@ import * as React from "react";
 
 export default function Footer() {
   return (
-      <footer style={{backgroundColor: "var(--main-color)"}} className="text-white text-center text-lg-start">
+      <footer id="footer" style={{backgroundColor: "var(--main-color)"}} className="text-white text-center text-lg-start">
         {/* <!-- Grid container --> */}
         <div className="container p-4">
           {/* <!--Grid row--> */}

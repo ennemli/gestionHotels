@@ -57,7 +57,7 @@ const hotels=[
 
     `,
     title:'Embassy Suites Dallas - Park Central Area ',
-    rate:3,
+    rate:6,
     price:400
 
   },
@@ -70,7 +70,9 @@ export default function Home() {
     <>
     <Header Navbar={Navbar}/>
     <HotelCanvas/>
+
     <Section>
+
       <Cards>
       {hotels.map((hotel,i)=><Card key={i} {...hotel}/>)}
       </Cards>
